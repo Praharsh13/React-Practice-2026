@@ -10,7 +10,7 @@ type CardProps={
 }
 const TodoCard = ({todo,onDelete,onToggle}:CardProps) => {
   return (
-    <div>
+    <div className='makeBox'>
         <h1>{todo.notes}</h1>
         <p>{todo.description}</p>
         <h3>{todo.date}</h3>

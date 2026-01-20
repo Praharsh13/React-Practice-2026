@@ -5,12 +5,9 @@ import TodoCard from './TodoCard'
 
 const ShowToDo = ({todoList,settodoList}:Props) => {
 
-    let handleDelete=(id:number)=>{
-
-        let listAfterDelete:TODO[]=todoList.filter((d:TODO)=>d.id!==id)
-        settodoList(listAfterDelete)
-
-    }
+    let handleDelete = (id: number) => {
+        settodoList((prev) => prev.filter((todo) => todo.id !== id))
+      }
 
     let handleToggle=(id:number)=>{ 
         settodoList((prev)=>prev.map((todo)=>(
@@ -21,7 +18,7 @@ const ShowToDo = ({todoList,settodoList}:Props) => {
        
     
   return (
-    <div className='makeBox'>
+    <div >
         {todoList.map((todo:TODO)=>(
             <TodoCard 
            
